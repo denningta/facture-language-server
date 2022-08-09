@@ -1,0 +1,14 @@
+define specification MD-2100 'Installation of Fasteners'
+
+section 1: scope {
+  md>
+    this is some plain text
+
+    this is some plain text with **inline bold** text
+
+    # this is a heading
+
+    // here is a comment
+    
+  <md
+}

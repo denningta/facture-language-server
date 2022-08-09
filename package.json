@@ -1,0 +1,72 @@
+{
+    "name": "facture-language-server",
+    "displayName": "facture-language-server",
+    "description": "Please enter a brief description here",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.56.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "facture",
+                "aliases": [
+                    "facture",
+                    "facture"
+                ],
+                "extensions": [
+                    ".fac"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "facture",
+                "scopeName": "source.facture",
+                "path": "./syntaxes/facture.tmLanguage.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:facture"
+    ],
+    "files": [
+        "bin",
+        "out",
+        "src"
+    ],
+    "bin": {
+        "facture-cli": "./bin/cli"
+    },
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run build && npm run lint",
+        "build": "tsc -b tsconfig.json",
+        "watch": "tsc -b tsconfig.json --watch",
+        "lint": "eslint src --ext ts",
+        "langium:generate": "langium generate",
+        "langium:watch": "langium generate --watch"
+    },
+    "dependencies": {
+        "chevrotain": "^9.1.0",
+        "colors": "^1.4.0",
+        "commander": "^8.0.0",
+        "langium": "file:../langium/packages/langium",
+        "vscode-languageclient": "^8.0.1",
+        "vscode-languageserver": "^8.0.1",
+        "vscode-uri": "^3.0.2"
+    },
+    "devDependencies": {
+        "@types/node": "^14.17.3",
+        "@types/vscode": "^1.56.0",
+        "@typescript-eslint/eslint-plugin": "^4.14.1",
+        "@typescript-eslint/parser": "^4.14.1",
+        "eslint": "^7.19.0",
+        "langium-cli": "file:../langium/packages/langium-cli",
+        "typescript": "^4.6.2"
+    }
+}
